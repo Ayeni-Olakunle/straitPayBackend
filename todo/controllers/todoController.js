@@ -10,7 +10,7 @@ const getTodo = asyncHandler(async (req, res) => {
 const postTodo = asyncHandler(async (req, res) => {
     if (!req.body.todoName) {
         res.status(400)
-        throw new Error("Please add a todo")
+        throw new Error("Please add a title");
     }
     const todos = await Todo.create({
         todoName: req.body.todoName,
